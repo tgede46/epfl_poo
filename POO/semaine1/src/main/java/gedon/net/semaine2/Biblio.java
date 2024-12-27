@@ -2,8 +2,6 @@
 package gedon.net.semaine2;
 
 
-//import org.jetbrains.annotations;
-
 import java.util.ArrayList;
 
 class Auteur {
