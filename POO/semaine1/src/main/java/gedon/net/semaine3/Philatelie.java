@@ -16,6 +16,50 @@ class Timbre {
     public static final double PRIX_BASE_2 = 400;
     public static final double PRIX_BASE_3 = 50;
 
+    private String code;
+    private int annee;
+    private String pays;
+    private double valeurFaciale;
+
+    public  Timbre(String code, int annee, String pays, double valeurFaciale) {
+        this.code = code;
+        this.annee = annee;
+        this.pays = pays;
+        this.valeurFaciale = valeurFaciale;
+    }
+    public Timbre() {
+        this(CODE_DEFAUT, ANNEE_COURANTE, PAYS_DEFAUT, VALEUR_TIMBRE_DEFAUT);
+    }
+
+    public double vente() {
+        return 2.5 * (ANNEE_COURANTE - annee) * valeurFaciale;
+    }
+
+    @Override
+    public String toString() {
+        return "Timbre de code " + code + " datant de " + annee + " (provenance " + pays + ") ayant pour valeur faciale " + valeurFaciale + " francs";
+    }
+
+    public int age() {
+        return ANNEE_COURANTE - annee;
+    }
+
+    public double getValeurFaciale() {
+        return valeurFaciale;
+    }
+
+    public int getAnnee() {
+        return annee;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public String getPays() {
+        return pays;
+    }
+
     /*******************************************
      * Completez le programme a partir d'ici.
      *******************************************/
