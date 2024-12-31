@@ -32,7 +32,7 @@ class Timbre {
     }
 
     public double vente() {
-        return 2.5 * (ANNEE_COURANTE - annee) * valeurFaciale;
+        return 2.5 * age() * valeurFaciale;
     }
 
     @Override
@@ -66,9 +66,39 @@ class Timbre {
 }
 
 class Rare extends Timbre{
+
+    private  int exemplaires;
+
+    public Rare(String code, int annee, String pays, double valeurFaciale, int exemplaires) {
+        super(code, annee, pays, valeurFaciale);
+        this.exemplaires = exemplaires;
+    }
+
+    public int getExemplaires() {
+        return exemplaires;
+    }
+
+    @Override
+    public String toString() {
+        return "Timbre de code " + getCode() + " datant de " + getAnnee() + " (provenance " + getPays() + ") ayant pour valeur faciale " + getValeurFaciale() + " francs\nNombre d'exemplaires -> " + getExemplaires() ;
+    }
 }
 
 class Commemoratif extends Timbre{
+
+    public Commemoratif(String code, int annee, String pays, double valeurFaciale) {
+        super(code, annee, pays, valeurFaciale);
+    }
+
+    @Override
+    public double vente() {
+        return super.vente() * 2;
+    }
+
+    @Override
+    public String toString() {
+        return "Timbre de code " + getCode() + " datant de " + getAnnee() + " (provenance " + getPays() + ") ayant pour valeur faciale " + getValeurFaciale() + " francs\nTimbre celebrant un evenement";
+    }
 }
 
 /*******************************************

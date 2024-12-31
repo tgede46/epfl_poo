@@ -1,4 +1,4 @@
-package gedon.net.semaine2;
+
 class Souris {
 
     public static final int ESPERANCE_VIE_DEFAUT = 36;

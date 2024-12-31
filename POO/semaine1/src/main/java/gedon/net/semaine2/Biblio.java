@@ -1,7 +1,3 @@
-
-package gedon.net.semaine2;
-
-
 import java.util.ArrayList;
 
 class Auteur {
